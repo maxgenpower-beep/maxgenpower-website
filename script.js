@@ -93,17 +93,54 @@ onScroll();
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Demo form handler (replace with your backend/email service)
+// REAL form handler – sends data to /api/quote
 const form = document.getElementById("quoteForm");
 const note = document.getElementById("formNote");
 
 if (form) {
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    note.textContent = "Sending...";
+
     const data = Object.fromEntries(new FormData(form).entries());
 
-    console.log("Quote request:", data);
-    note.textContent = "Thanks! We received your request. (Connect this to email or a backend next.)";
-    form.reset();
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+
+      if (!res.ok || !result.ok) {
+        throw new Error("Failed");
+      }
+
+      note.textContent = "Thanks! Your request has been sent. We’ll contact you shortly.";
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      note.textContent =
+        "Sorry, something went wrong. Please email maxgenpower@gmail.com directly.";
+    }
   });
 }
+
+// Demo form handler (replace with your backend/email service)
+//const form = document.getElementById("quoteForm");
+//const note = document.getElementById("formNote");
+
+//if (form) {
+ // form.addEventListener("submit", (e) => {
+  //  e.preventDefault();
+ //   const data = Object.fromEntries(new FormData(form).entries());
+
+ //   console.log("Quote request:", data);
+//    note.textContent = "Thanks! We received your request. (Connect this to email or a backend next.)";
+//    form.reset();
+//  });
+//}
+
