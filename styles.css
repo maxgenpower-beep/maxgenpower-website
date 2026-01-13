@@ -47,7 +47,7 @@ img{max-width:100%;display:block}
   box-shadow: 0 6px 18px rgba(0,0,0,.22);
 }
 .brand__logo{
-  height: 40px;
+  height: 52px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -425,3 +425,4 @@ input:focus, select:focus, textarea:focus{
   .nav__links.is-open{display:flex}
   .nav__link.is-active::after{display:none}
 }
+
