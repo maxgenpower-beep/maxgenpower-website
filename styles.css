@@ -194,6 +194,43 @@ img{max-width:100%;display:block}
 .card h3{margin:0 0 10px; font-size:15px}
 .card p{margin:0 0 14px; color:var(--muted); font-size:13.5px; line-height:1.55}
 
+/* Card background image (used for Services cards) */
+.card--bg{
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  border-color: rgba(255,255,255,.12);
+}
+
+.card--bg::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: var(--card-bg) center/cover no-repeat;
+  transform: scale(1.03);
+  z-index:0;
+}
+
+.card--bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.65));
+  z-index:1;
+}
+
+/* Keep the content above the overlays */
+.card--bg > *{
+  position: relative;
+  z-index:2;
+}
+
+/* Make text readable on image */
+.card--bg p{ color: rgba(255,255,255,.88); }
+.card--bg .checklist li{ color: rgba(255,255,255,.92); }
+.card--bg .checklist li::before{ color: #fff; }
+
+
 .checklist{margin:0; padding:0; list-style:none; display:grid; gap:8px}
 .checklist li{font-size:12.5px; color:#374151; position:relative; padding-left:18px}
 .checklist li::before{
@@ -425,4 +462,5 @@ input:focus, select:focus, textarea:focus{
   .nav__links.is-open{display:flex}
   .nav__link.is-active::after{display:none}
 }
+
 
