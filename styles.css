@@ -123,7 +123,7 @@ img{max-width:100%;display:block}
 
 .hero{
   position:relative;
-  min-height:560px;
+  min-height:420px;
   display:flex;
   align-items:center;
   color:#fff;
@@ -139,7 +139,7 @@ img{max-width:100%;display:block}
 }
 .hero__content{
   position:relative;
-  padding:72px 0 64px;
+  padding:56px 0 44px;
   max-width: 740px;
 }
 .hero__title{
@@ -462,5 +462,6 @@ input:focus, select:focus, textarea:focus{
   .nav__links.is-open{display:flex}
   .nav__link.is-active::after{display:none}
 }
+
 
 
