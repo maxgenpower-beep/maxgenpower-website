@@ -1,5 +1,5 @@
 :root{
-  --red:#e02424;
+  --red:#a90909;
   --black:#0b0b0c;
   --ink:#0e1116;
   --text:#111827;
@@ -468,6 +468,7 @@ input:focus, select:focus, textarea:focus{
   .nav__links.is-open{display:flex}
   .nav__link.is-active::after{display:none}
 }
+
 
 
 
