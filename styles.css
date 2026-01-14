@@ -170,7 +170,7 @@ img{max-width:100%;display:block}
 .section__title{margin:14px 0 10px; font-size:22px}
 .section__sub{margin:0 auto; max-width: 76ch; color:var(--muted); font-size:14px; line-height:1.6}
 .services__note{
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: center;
   color: var(--muted);
   font-weight: 600;
@@ -468,6 +468,7 @@ input:focus, select:focus, textarea:focus{
   .nav__links.is-open{display:flex}
   .nav__link.is-active::after{display:none}
 }
+
 
 
 
