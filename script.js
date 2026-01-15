@@ -63,7 +63,7 @@ window.addEventListener("load", () => {
 });
 
 // Active nav link highlighting (based on scroll position)
-const sections = ["#home", "#services", "#rentals", "#about", "#contact"]
+const sections = ["#home", "#services", "#about", "#contact"]
   .map((id) => document.querySelector(id))
   .filter(Boolean);
 
@@ -125,5 +125,6 @@ if (form) {
     }
   });
 }
+
 
 
