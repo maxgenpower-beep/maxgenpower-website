@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
     await transporter.sendMail({
       from: `"Maxgen Website" <${process.env.GMAIL_USER}>`,
-      to: "maxgenpower@gmail.com",
+      to: "info@maxgenpower.com",
       replyTo: email,
       subject: `New Quote Request — ${fullName}${service ? ` (${service})` : ""}`,
       text:
