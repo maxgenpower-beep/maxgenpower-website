@@ -469,8 +469,9 @@ input:focus, select:focus, textarea:focus{
   .nav__link.is-active::after{display:none}
 }
 
-
-
+#services { padding-bottom: 24px; }
+#services .services__note { margin-bottom: 0; }
+#about { padding-top: 24px; }
 
 
 
